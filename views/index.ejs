@@ -14,11 +14,14 @@
       </tr>
     </thead>
     <tbody>
-      <% for (const empleado of model) { %>
+      <% for (const empleado of model) { 
+          const f=new Date( empleado.fechaingreso).toISOString().slice(0, 10);
+          
+        %>
         <tr>
           <td><%= empleado.nombre %></td>
           <td><%= empleado.correo %></td>
-          <td> <input type="date" placeholder="YYYY-MM-DD:HH:MM.SSSS" value="<%= empleado.fechaIngreso %>" readonly> </td>
+          <td> <input type="date" value="<%= f %>" readonly>  </td>
           <td class="d-print-none">
             <a class="btn btn-sm btn-warning" href="/edit/<%= empleado.id %>">Editar</a>
             <a class="btn btn-sm btn-danger" href="/delete/<%= empleado.id %>">Borrar</a>

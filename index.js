@@ -81,7 +81,7 @@ const pool = new Pool({
   // POST /edit/5
   app.post("/edit/:id", (req, res) => {
     const id = req.params.id;
-    const book = [req.body.nombre, req.body.correo, req.body.fechaIngreso, id];
+    const book = [req.body.nombre, req.body.correo, req.body.fechaingreso, id];
     const sql = "UPDATE empleado SET nombre = $1, correo = $2, fechaIngreso = $3 WHERE (id = $4)";
     pool.query(sql, book, (err, result) => {
       if (err) {
