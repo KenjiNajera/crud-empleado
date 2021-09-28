@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const { Pool } = require("pg");
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -25,8 +26,8 @@ const pool = new Pool({
 
   
   // Starting the server
-  app.listen(3000, () => {
-    console.log("Server started (http://localhost:3000/) !");
+  app.listen(port, () => {
+    console.log("Server started (http://localhost:$port/) !");
   });
   
   // GET /
