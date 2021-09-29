@@ -1,11 +1,12 @@
 <%- include("_header") -%>
-<h1>List of empleado (<%= model.length %>)</h1>
+<h1>Lista de empleado (<%= model.length %>)</h1>
 
 <div class="table-responsive-sm">
   <table class="table table-hover">
     <thead>
       <tr>
         <th>Nombre</th>
+        <th>Apellido</th>
         <th>Correo</th>
         <th>Fecha de ingreso</th>
         <th class="d-print-none">
@@ -14,19 +15,27 @@
       </tr>
     </thead>
     <tbody>
-      <% for (const empleado of model) { 
-          const f=new Date( empleado.fechaingreso).toISOString().slice(0, 10);
-          
-        %>
-        <tr>
-          <td><%= empleado.nombre %></td>
-          <td><%= empleado.correo %></td>
-          <td> <input type="date" value="<%= f %>" readonly>  </td>
-          <td class="d-print-none">
-            <a class="btn btn-sm btn-warning" href="/edit/<%= empleado.id %>">Editar</a>
-            <a class="btn btn-sm btn-danger" href="/delete/<%= empleado.id %>">Borrar</a>
-          </td>
-        </tr>
+      <% for (const empleado of model) { %>
+      <tr>
+        <td><%= empleado.nombre %></td>
+        <td><%= empleado.apellido%></td>
+        <td><%= empleado.correo %></td>
+        <td>
+          <input
+            type="date"
+            value="<%= new Date( empleado.fechaingreso).toISOString().slice(0, 10); %>"
+            readonly
+          />
+        </td>
+        <td class="d-print-none">
+          <a class="btn btn-sm btn-warning" href="/edit/<%= empleado.id %>"
+            >Editar</a
+          >
+          <a class="btn btn-sm btn-danger" href="/delete/<%= empleado.id %>"
+            >Borrar</a
+          >
+        </td>
+      </tr>
       <% } %>
     </tbody>
   </table>
