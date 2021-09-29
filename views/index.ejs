@@ -1,14 +1,19 @@
 <%- include("_header") -%>
+<style>
+  table,td {
+border: 1px solid black;
+}
+</style>
 <h1>Lista de empleados (<%= model.length %>)</h1>
-
+<br/>
 <div class="table-responsive-sm">
   <table class="table table-hover">
-    <thead>
+    <thead class="thead-dark">
       <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Correo</th>
-        <th>Fecha de ingreso</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Fecha de ingreso</th>
         <th class="d-print-none">
           <a class="btn btn-sm btn-success" href="/create">Crear</a>
         </th>
@@ -17,7 +22,7 @@
     <tbody>
       <% for (const empleado of model) { %>
       <tr>
-        <td><%= empleado.nombre %></td>
+        <td scope="row"><%= empleado.nombre %></td>
         <td><%= empleado.apellido%></td>
         <td><%= empleado.correo %></td>
         <td>
