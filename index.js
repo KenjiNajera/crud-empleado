@@ -20,7 +20,7 @@ const pool = new Pool({
   password: "S3T2Ns4EVpNcSsWOaTaPT0LXAwODC4Yr",
   port: 5432,
 });
-console.log("Successful connection to the database");
+console.log("Se ha realizado la conexión exitosamente");
 
 // Starting the server
 app.listen(port, () => {
