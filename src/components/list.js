@@ -49,7 +49,7 @@ class list extends React.Component {
 
     
       return (
-        
+        !datosCargados? <div>Cargando...</div> :
       <>
         <br></br>
         <div className="card">
@@ -111,7 +111,6 @@ class list extends React.Component {
       </>
       )
    
-    
     
   }
 }
