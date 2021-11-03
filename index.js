@@ -20,11 +20,19 @@ const pool = new Pool({
   password: "S3T2Ns4EVpNcSsWOaTaPT0LXAwODC4Yr",
   port: 5432,
 });
-console.log("Successful connection to the database");
+pool.connect((err, client, release) => {
+    if (err) {
+      return console.error('Error acquiring client', err.stack)
+    }else{
+        console.log("Successful connection to the database");
+    }
+    
+  })
+
 
 // Starting the server
 app.listen(port, () => {
-  console.log("Server started (http://localhost:$port/) !");
+  console.log("Server started (http://localhost:${port}/) !");
 });
 
 // GET /
