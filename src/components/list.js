@@ -3,13 +3,21 @@ import { Link } from "react-router-dom";
 import _baseUrl from "../service/api";
 import Axios from "axios";
 import Swal from "sweetalert2";
+import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
+import PdfCustom from "./List2.js";
 //import getUsuarios from "../models/getUsuarios.js";
+
+
 
 class list extends React.Component {
   constructor(props) {
     super(props);
     this.state = { datosCargados: false, empleados: [] };
     //    this.getUsuarios();
+  }
+
+  imprimir (dato){
+    console.log(dato)
   }
 
   cargarDatos() {
@@ -40,16 +48,17 @@ class list extends React.Component {
     });
   };
 
+
   componentDidMount() {
     this.cargarDatos();
   }
 
   render() {
     const { datosCargados, empleados } = this.state;
-
+ 
     
       return (
-        
+       
       <>
         <br></br>
         <div className="card">
@@ -98,6 +107,14 @@ class list extends React.Component {
                         >
                           <i className="fas fa-trash-alt"></i>
                         </button>
+                        {/* <PDFDownloadLink document={<PdfCustom dato={empleados}/>} fileName={CartaRecomendacion_${empleados.nombre}.pdf}>
+                                
+                            </PDFDownloadLink> */}
+                                <PDFDownloadLink document={<PdfCustom dato={empleado} />} fileName="CartaRecomendación.pdf">
+                                  <button  className="btn btn-info">
+                                  Descargar
+                                  </button>
+                    </PDFDownloadLink>
                       </div>
                     </td>
                   </tr>
@@ -114,6 +131,12 @@ class list extends React.Component {
     
     
   }
+}
+
+const pdfDoc =()=>{
+  return (
+    <div id="content">HOLA</div>
+  )
 }
 
 export default list;
