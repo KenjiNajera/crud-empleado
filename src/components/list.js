@@ -126,10 +126,7 @@ class list extends React.Component {
         </div>
         <br></br>
       </>
-      )
-   
-    
-    
+      )   
   }
 }
 
