@@ -59,7 +59,7 @@ class list extends React.Component {
     
       return (
        
-      <>
+        <div className="container">
         <br></br>
         <div className="card">
           <div className="card-header">
@@ -125,7 +125,7 @@ class list extends React.Component {
           <div className="card-footer text-muted"></div>
         </div>
         <br></br>
-      </>
+      </div>
       )   
   }
 }
