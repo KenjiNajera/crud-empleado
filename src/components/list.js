@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import _baseUrl from "../service/api";
 import Axios from "axios";
 import Swal from "sweetalert2";
-import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
+import { PDFDownloadLink,} from '@react-pdf/renderer';
 import PdfCustom from "./List2.js";
 //import getUsuarios from "../models/getUsuarios.js";
 
@@ -55,8 +55,9 @@ class list extends React.Component {
 
   render() {
     const { datosCargados, empleados } = this.state;
- 
-    
+    if (!datosCargados) {
+      return <div>Cargando...</div>;
+    } else {
       return (
        
         <div className="container">
@@ -112,7 +113,7 @@ class list extends React.Component {
                             </PDFDownloadLink> */}
                                 <PDFDownloadLink document={<PdfCustom dato={empleado} />} fileName="CartaRecomendación.pdf">
                                   <button  className="btn btn-info">
-                                  Descargar
+                                  <i class="fas fa-file-pdf"></i>
                                   </button>
                     </PDFDownloadLink>
                       </div>
@@ -126,14 +127,13 @@ class list extends React.Component {
         </div>
         <br></br>
       </div>
-      )   
+      ) 
+    }
+    
+        
   }
 }
 
-const pdfDoc =()=>{
-  return (
-    <div id="content">HOLA</div>
-  )
-}
+
 
 export default list;
