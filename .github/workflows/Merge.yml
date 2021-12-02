@@ -1,15 +1,15 @@
-name: Merge test
+# name: Merge test
 
-on:
-  push:
-    branches:
-      - "brian-dev"
-jobs:
-  merge-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: everlytic/branch-merge@1.1.2
-        with:
-          target_branch: 'test'
-          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
+# on:
+#   push:
+#     branches:
+#       - "brian-dev"
+# jobs:
+#   merge-branch:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: everlytic/branch-merge@1.1.2
+#         with:
+#           target_branch: 'test'
+#           commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
