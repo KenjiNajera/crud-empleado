@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import _baseUrl from "../service/api";
 import Axios from "axios";
 import Swal from "sweetalert2";
-import { PDFDownloadLink,} from '@react-pdf/renderer';
+import { PDFDownloadLink} from '@react-pdf/renderer';
 import PdfCustom from "./List2.js";
 //import getUsuarios from "../models/getUsuarios.js";
 
@@ -89,6 +89,7 @@ class list extends React.Component {
               <tbody>
                 {empleados.map((empleado) => (
                   <tr key={empleado.id}>
+                    
                     <td>{empleado.nombre}</td>
                     <td>{empleado.apellido}</td>
                     <td>{empleado.correo}</td>
@@ -112,10 +113,12 @@ class list extends React.Component {
                                 
                             </PDFDownloadLink> */}
                                 <PDFDownloadLink document={<PdfCustom dato={empleado} />} fileName="CartaRecomendación.pdf">
-                                  <button  className="btn btn-info">
+                                <button  className="btn btn-info">
                                   <i class="fas fa-file-pdf"></i>
                                   </button>
                     </PDFDownloadLink>
+                                  
+                    
                       </div>
                     </td>
                   </tr>
