@@ -2,9 +2,8 @@ name: Merge test
 
 on:
   push:
-    branches: [ brian-dev ]
-  pull_request:
-    branches: [ brian-dev ]
+    branches:
+      - brian-dev
 
 jobs:
   main:
