@@ -8,8 +8,11 @@ on:
   pull_request:
     branches: [ brian-dev,test ]
 
+
+
 jobs:
   merge-branch:
+    name: Merge test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,7 +21,6 @@ jobs:
           target_branch: 'test'
           commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
 
-jobs:
   buildAndTest:
     name: Testing
     runs-on: ubuntu-latest
