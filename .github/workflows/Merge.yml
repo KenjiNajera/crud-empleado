@@ -3,26 +3,13 @@ name: Merge test
 on:
   push:
     branches:
-      - brian-dev
-
+      - "brian-dev"
 jobs:
-  main:
-    name: Merge Test
+  merge-branch:
     runs-on: ubuntu-latest
     steps:
-      - name: git checkout
-        uses: actions/checkout@v2
-      - name: pull
-        run: 
-          git pull
-      - name: checkout test
-        run: 
-          git checkout test
-      - name: merge brian-dev
-        run: 
-          git merge brian-dev
-      - name: push
-        run: 
-          git push
-
-    
+      - uses: actions/checkout@v2
+      - uses: everlytic/branch-merge@1.1.2
+        with:
+          target_branch: 'test'
+          commit_message_template: '[Automated] Merged {source_ref} into target {target_branch}'
