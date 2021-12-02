@@ -1,0 +1,29 @@
+name: Merge test
+
+on:
+  push:
+    branches: [ brian-dev ]
+  pull_request:
+    branches: [ brian-dev ]
+
+jobs:
+  main:
+    name: Merge Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v2
+      - name: pull
+        run: 
+          git pull
+      - name: checkout test
+        run: 
+          git checkout test
+      - name: merge brian-dev
+        run: 
+          git merge brian-dev
+      - name: push
+        run: 
+          git push
+
+    
