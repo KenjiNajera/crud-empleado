@@ -28,11 +28,9 @@ const PdfCustom = ({dato}) => {
                     MÉRIDA, YUCATAN A DÍA {date.getDate()} DE MES {monthNames[date.getMonth()]} DEL AÑO {date.getFullYear()}</Text>
                 <Text style={{ fontSize: '12px', textAlign: 'left', marginTop: 50, marginHorizontal:12, marginBottom: 50}}>A QUIEN CORRESPONDA:</Text>
                 <Text style={{ fontSize: '12px', textAlign: 'justify', margin: 12, }}>
-                    Por medio de la presente y para los fines que pretenda el interesado, hago de su 
-                    conocimiento que recomiendo ampliamente al C. {dato.nombre +" "+ dato.apellido}, ya que es una 
-                    persona Honesta y Responsable en las actividades que durante el periodo que prestó
-                    servicios en nuestra empresa fueron asignadas, por tal motivo no tengo ninguna duda
-                    en expedir esta recomendación.
+                    Por medio de la presente, extiendo mi recomendación personal a {dato.nombre +" "+ dato.apellido}, ha mostrado ser una persona íntegra, responsable y trabajadora.
+                    Por todo lo anterior, le considero una gran persona digna de confianza y con la aptitud y capacidad para afrontar cualquier responsabilidad que se deje a su cargo. Asimismo, puedo asegurar que es una persona con una ética intachable.
+                    Sin más por el momento, reitero mi más sincera recomendación para los fines que considere pertinentes.
                 </Text>
                 <Text style={{ fontSize: '12px', textAlign: 'justify', marginTop: 12, marginHorizontal:12, marginBottom: 80 }}>
                     Se extiende la presente a solicitud del interesado y para los fines que juzgue convenientes.
