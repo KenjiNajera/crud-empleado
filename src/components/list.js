@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import _baseUrl from "../service/api";
 import Axios from "axios";
 import Swal from "sweetalert2";
-import { PDFDownloadLink} from '@react-pdf/renderer';
+import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfCustom from "./List2.js";
 //import getUsuarios from "../models/getUsuarios.js";
-
-
 
 class list extends React.Component {
   constructor(props) {
@@ -16,8 +14,8 @@ class list extends React.Component {
     //    this.getUsuarios();
   }
 
-  imprimir (dato){
-    console.log(dato)
+  imprimir(dato) {
+    console.log(dato);
   }
 
   cargarDatos() {
@@ -48,7 +46,6 @@ class list extends React.Component {
     });
   };
 
-
   componentDidMount() {
     this.cargarDatos();
   }
@@ -59,84 +56,81 @@ class list extends React.Component {
       return <div>Cargando...</div>;
     } else {
       return (
-       
         <div className="container">
-        <br></br>
-        <div className="card">
-          <div className="card-header">
-            <div className="row">
-              <div className="col">
-                <h4>Lista Empleado</h4>
-              </div>
-              <div className="col" align="right">
-                <Link id="btn-add" className="btn btn-success" to={"/add"}>
-                  <i className="fas fa-plus"></i>
-                </Link>
+          <br></br>
+          <div className="card">
+            <div className="card-header">
+              <div className="row">
+                <div className="col">
+                  <h4>Lista Empleado</h4>
+                </div>
+                <div className="col" align="right">
+                  <Link id="btn-add" className="btn btn-success" to={"/add"}>
+                    <i className="fas fa-plus"></i>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="card-body">
-            <table className="table">
-              <thead>
-                <tr className="table-Light">
-                  <th>Nombre</th>
-                  <th>Apellido</th>
-                  <th>Correo</th>
-                  <th>Fecha Ingreso</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {empleados.map((empleado) => (
-                  <tr key={empleado.id}>
-                    
-                    <td>{empleado.nombre}</td>
-                    <td>{empleado.apellido}</td>
-                    <td>{empleado.correo}</td>
-                    <td>{empleado.fechaIngreso}</td>
-                    <td>
-                      <div className="btn-group" role="group" aria-label="">
-                        <Link id="btn-edit"
-                          className="btn btn-warning"
-                          to={"/editEmpl/" + empleado.id}
-                        >
-                          <i className="fas fa-pen"></i>
-                        </Link>
+            <div className="card-body">
+              <table className="table">
+                <thead>
+                  <tr className="table-Light">
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Fecha Ingreso</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {empleados.map((empleado) => (
+                    <tr key={empleado.id}>
+                      <td>{empleado.nombre}</td>
+                      <td>{empleado.apellido}</td>
+                      <td>{empleado.correo}</td>
+                      <td>{empleado.fechaIngreso}</td>
+                      <td>
+                        <div className="btn-group" role="group" aria-label="">
+                          <Link
+                            id="btn-edit"
+                            className="btn btn-warning"
+                            to={"/editEmpl/" + empleado.id}
+                          >
+                            <i className="fas fa-pen"></i>
+                          </Link>
 
-                        <button id="btn-delete"
-                          className="btn btn-danger"
-                          onClick={() => this.borrarRegistro(empleado.id)}
-                        >
-                          <i className="fas fa-trash-alt"></i>
-                        </button>
-                        {/* <PDFDownloadLink document={<PdfCustom dato={empleados}/>} fileName={CartaRecomendacion_${empleados.nombre}.pdf}>
+                          <button
+                            id="btn-delete"
+                            className="btn btn-danger"
+                            onClick={() => this.borrarRegistro(empleado.id)}
+                          >
+                            <i className="fas fa-trash-alt"></i>
+                          </button>
+                          {/* <PDFDownloadLink document={<PdfCustom dato={empleados}/>} fileName={CartaRecomendacion_${empleados.nombre}.pdf}>
                                 
                             </PDFDownloadLink> */}
-                                <PDFDownloadLink document={<PdfCustom dato={empleado} />} fileName="CartaRecomendación.pdf">
-                                <button  className="btn btn-info">
-                                  <i class="fas fa-file-pdf"></i>
-                                  </button>
-                    </PDFDownloadLink>
-                                  
-                    
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                          <PDFDownloadLink
+                            document={<PdfCustom dato={empleado} />}
+                            fileName="CartaRecomendación.pdf"
+                          >
+                            <button className="btn btn-info">
+                              <i class="fas fa-file-pdf"></i>
+                            </button>
+                          </PDFDownloadLink>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="card-footer text-muted"></div>
           </div>
-          <div className="card-footer text-muted"></div>
+          <br></br>
         </div>
-        <br></br>
-      </div>
-      ) 
+      );
     }
-    
-        
   }
 }
-
-
 
 export default list;
