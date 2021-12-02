@@ -40,7 +40,7 @@ class editUser extends React.Component {
       return <div>Cargando...</div>;
     } else {
       return (
-        <>
+        
           <div className="container">
             <div className="row">
               <div className="col"></div>
@@ -155,7 +155,7 @@ class editUser extends React.Component {
               <div className="col"></div>
             </div>
           </div>
-        </>
+        
       );
     }
   }

@@ -1,8 +1,8 @@
 import "./App.css";
-import Listar from "../src/components/List.js";
+import Listar from "../src/components/list.js";
 import editarEmpl from "./components/Edit.js";
-import Formulario from "./components/Form.js";
-
+import Formulario from "./components/form.js";
+import React from "react";
 import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 function App() {
   return (
