@@ -32,9 +32,7 @@ const PdfCustom = ({dato}) => {
                     Por todo lo anterior, le considero una gran persona digna de confianza y con la aptitud y capacidad para afrontar cualquier responsabilidad que se deje a su cargo. Asimismo, puedo asegurar que es una persona con una ética intachable.
                     Sin más por el momento, reitero mi más sincera recomendación para los fines que considere pertinentes.
                 </Text>
-                <Text style={{ fontSize: '12px', textAlign: 'justify', marginTop: 12, marginHorizontal:12, marginBottom: 80 }}>
-                    Se extiende la presente a solicitud del interesado y para los fines que juzgue convenientes.
-                </Text>
+
                 <Text style={{ fontSize: '12px', textAlign: 'center', marginHorizontal:12, marginBottom: 25  }}>
                     FIRMA
                 </Text>
