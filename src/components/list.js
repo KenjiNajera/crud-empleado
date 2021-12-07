@@ -23,7 +23,6 @@ class list extends React.Component {
       this.setState({ datosCargados: true, empleados: res.data });
     });
   }
-
   borrarRegistro = (id) => {
     Swal.fire({
       title: "¿Estás seguro que deseas eliminar este usuario?",
