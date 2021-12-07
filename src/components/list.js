@@ -13,7 +13,6 @@ class list extends React.Component {
     this.state = { datosCargados: false, empleados: [] };
     //    this.getUsuarios();
   }
-
   imprimir(dato) {
     console.log(dato);
   }
