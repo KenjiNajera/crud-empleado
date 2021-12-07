@@ -17,7 +17,6 @@ class list extends React.Component {
   imprimir(dato) {
     console.log(dato);
   }
-
   cargarDatos() {
     //getUsuarios().then(res=>{this.setState({ datosCargados: true, empleados: res });});
     Axios.get(_baseUrl).then((res) => {
