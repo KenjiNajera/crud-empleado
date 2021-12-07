@@ -5,6 +5,6 @@ import App from './App';
 
 test("Renders Priority Label", () => {
     render(<App/>);
-    const linkElement = screen.getByText("CRUD Empleado");
-    expect(linkElement);
+    screen.getByText("CRUD Empleado");
+    
 });
