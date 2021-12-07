@@ -6,7 +6,7 @@ on:
   push:
     branches: [ brian-dev,test ]
   pull_request:
-    branches: [ brian-dev,test ]
+    branches: [ test ]
 
 
 
