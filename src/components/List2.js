@@ -40,7 +40,7 @@ const PdfCustom = ({dato}) => {
                     ________________________
                 </Text>
                 <Text style={{ fontSize: '12px', textAlign: 'center' }}>
-                    Bryan Isaac Mendez Pech
+                    Bryan Isaac Mendez Pech UTM
                 </Text>
             </View>
         </Page>
