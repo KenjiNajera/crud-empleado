@@ -5,6 +5,6 @@ import App from './App';
 
 test("Renders Priority Label", () => {
     render(<App/>);
-    screen.getByText("CRUD Empleado");
+    screen.getByText("Hola");
     
 });
