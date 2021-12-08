@@ -129,5 +129,4 @@ class list extends React.Component {
     }
   }
 }
-
 export default list;
